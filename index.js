@@ -252,7 +252,6 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { sum, pdq } = nativeBinding
+const { pdq } = nativeBinding
 
-module.exports.sum = sum
 module.exports.pdq = pdq

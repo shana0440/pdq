@@ -1,11 +1,7 @@
 import test from "ava";
 import fs from "fs";
 
-import { sum, pdq } from "../index.js";
-
-test("sum from native", (t) => {
-  t.is(sum(1, 2), 3);
-});
+import { pdq } from "../index.js";
 
 test("get pdq hash", (t) => {
   const buffer = fs.readFileSync("./test_data/bridge-1-original.jpg");
