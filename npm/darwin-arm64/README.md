@@ -1,3 +1,3 @@
-# `pdq-darwin-arm64`
+# `@sensource/pdq-darwin-arm64`
 
-This is the **aarch64-apple-darwin** binary for `pdq`
+This is the **aarch64-apple-darwin** binary for `@sensource/pdq`

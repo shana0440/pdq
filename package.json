@@ -1,20 +1,24 @@
 {
-  "name": "pdq",
-  "version": "0.0.0",
+  "name": "@sensource/pdq",
+  "version": "0.2.0",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
     "name": "pdq",
     "triples": {
+      "defaults": false,
       "additional": [
-        "aarch64-apple-darwin"
+        "aarch64-apple-darwin",
+        "x86_64-apple-darwin",
+        "x86_64-unknown-linux-gnu",
+        "x86_64-unknown-linux-musl"
       ]
     }
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^2.16.1",
-    "ava": "^5.1.1"
+    "@napi-rs/cli": "^2.18.0",
+    "ava": "^6.0.1"
   },
   "ava": {
     "timeout": "3m"
@@ -26,11 +30,9 @@
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
-    "postinstall": "npm run build",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "ava",
     "universal": "napi universal",
     "version": "napi version"
-  },
-  "packageManager": "yarn@3.6.1"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@sensource/pdq-linux-x64-gnu",
+  "name": "@sensource/pdq-linux-x64-musl",
   "version": "0.0.0",
   "os": [
     "linux"
@@ -7,15 +7,15 @@
   "cpu": [
     "x64"
   ],
-  "main": "pdq.linux-x64-gnu.node",
+  "main": "pdq.linux-x64-musl.node",
   "files": [
-    "pdq.linux-x64-gnu.node"
+    "pdq.linux-x64-musl.node"
   ],
   "license": "MIT",
   "engines": {
     "node": ">= 10"
   },
   "libc": [
-    "glibc"
+    "musl"
   ]
 }

@@ -1,3 +1,3 @@
-# `pdq-linux-x64-gnu`
+# `@sensource/pdq-linux-x64-gnu`
 
-This is the **x86_64-unknown-linux-gnu** binary for `pdq`
+This is the **x86_64-unknown-linux-gnu** binary for `@sensource/pdq`

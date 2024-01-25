@@ -1,5 +1,5 @@
 {
-  "name": "pdq-darwin-arm64",
+  "name": "@sensource/pdq-darwin-arm64",
   "version": "0.0.0",
   "os": [
     "darwin"

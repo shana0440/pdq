@@ -37,7 +37,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.android-arm64.node')
           } else {
-            nativeBinding = require('pdq-android-arm64')
+            nativeBinding = require('@sensource/pdq-android-arm64')
           }
         } catch (e) {
           loadError = e
@@ -49,7 +49,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.android-arm-eabi.node')
           } else {
-            nativeBinding = require('pdq-android-arm-eabi')
+            nativeBinding = require('@sensource/pdq-android-arm-eabi')
           }
         } catch (e) {
           loadError = e
@@ -69,7 +69,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.win32-x64-msvc.node')
           } else {
-            nativeBinding = require('pdq-win32-x64-msvc')
+            nativeBinding = require('@sensource/pdq-win32-x64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -83,7 +83,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.win32-ia32-msvc.node')
           } else {
-            nativeBinding = require('pdq-win32-ia32-msvc')
+            nativeBinding = require('@sensource/pdq-win32-ia32-msvc')
           }
         } catch (e) {
           loadError = e
@@ -97,7 +97,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.win32-arm64-msvc.node')
           } else {
-            nativeBinding = require('pdq-win32-arm64-msvc')
+            nativeBinding = require('@sensource/pdq-win32-arm64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -113,7 +113,7 @@ switch (platform) {
       if (localFileExisted) {
         nativeBinding = require('./pdq.darwin-universal.node')
       } else {
-        nativeBinding = require('pdq-darwin-universal')
+        nativeBinding = require('@sensource/pdq-darwin-universal')
       }
       break
     } catch {}
@@ -124,7 +124,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.darwin-x64.node')
           } else {
-            nativeBinding = require('pdq-darwin-x64')
+            nativeBinding = require('@sensource/pdq-darwin-x64')
           }
         } catch (e) {
           loadError = e
@@ -138,7 +138,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.darwin-arm64.node')
           } else {
-            nativeBinding = require('pdq-darwin-arm64')
+            nativeBinding = require('@sensource/pdq-darwin-arm64')
           }
         } catch (e) {
           loadError = e
@@ -157,7 +157,7 @@ switch (platform) {
       if (localFileExisted) {
         nativeBinding = require('./pdq.freebsd-x64.node')
       } else {
-        nativeBinding = require('pdq-freebsd-x64')
+        nativeBinding = require('@sensource/pdq-freebsd-x64')
       }
     } catch (e) {
       loadError = e
@@ -174,7 +174,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./pdq.linux-x64-musl.node')
             } else {
-              nativeBinding = require('pdq-linux-x64-musl')
+              nativeBinding = require('@sensource/pdq-linux-x64-musl')
             }
           } catch (e) {
             loadError = e
@@ -187,7 +187,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./pdq.linux-x64-gnu.node')
             } else {
-              nativeBinding = require('pdq-linux-x64-gnu')
+              nativeBinding = require('@sensource/pdq-linux-x64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -203,7 +203,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./pdq.linux-arm64-musl.node')
             } else {
-              nativeBinding = require('pdq-linux-arm64-musl')
+              nativeBinding = require('@sensource/pdq-linux-arm64-musl')
             }
           } catch (e) {
             loadError = e
@@ -216,7 +216,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./pdq.linux-arm64-gnu.node')
             } else {
-              nativeBinding = require('pdq-linux-arm64-gnu')
+              nativeBinding = require('@sensource/pdq-linux-arm64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -231,7 +231,50 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./pdq.linux-arm-gnueabihf.node')
           } else {
-            nativeBinding = require('pdq-linux-arm-gnueabihf')
+            nativeBinding = require('@sensource/pdq-linux-arm-gnueabihf')
+          }
+        } catch (e) {
+          loadError = e
+        }
+        break
+      case 'riscv64':
+        if (isMusl()) {
+          localFileExisted = existsSync(
+            join(__dirname, 'pdq.linux-riscv64-musl.node')
+          )
+          try {
+            if (localFileExisted) {
+              nativeBinding = require('./pdq.linux-riscv64-musl.node')
+            } else {
+              nativeBinding = require('@sensource/pdq-linux-riscv64-musl')
+            }
+          } catch (e) {
+            loadError = e
+          }
+        } else {
+          localFileExisted = existsSync(
+            join(__dirname, 'pdq.linux-riscv64-gnu.node')
+          )
+          try {
+            if (localFileExisted) {
+              nativeBinding = require('./pdq.linux-riscv64-gnu.node')
+            } else {
+              nativeBinding = require('@sensource/pdq-linux-riscv64-gnu')
+            }
+          } catch (e) {
+            loadError = e
+          }
+        }
+        break
+      case 's390x':
+        localFileExisted = existsSync(
+          join(__dirname, 'pdq.linux-s390x-gnu.node')
+        )
+        try {
+          if (localFileExisted) {
+            nativeBinding = require('./pdq.linux-s390x-gnu.node')
+          } else {
+            nativeBinding = require('@sensource/pdq-linux-s390x-gnu')
           }
         } catch (e) {
           loadError = e
