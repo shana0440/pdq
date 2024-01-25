@@ -11,4 +11,3 @@ const buffer = fs.readFileSync("./test_data/bridge-1-original.jpg");
 const data = Uint8Array.from(buffer);
 const hash = pdq(data);
 ```
-
