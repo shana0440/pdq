@@ -8,13 +8,27 @@ use pdqhash;
 
 #[napi]
 pub fn pdq(buf: Uint8Array) -> String {
-  let hash = pdqhash::generate_pdq_full_size(&pdqhash::image::load_from_memory(&buf).unwrap()).0;
+  let img_result = &pdqhash::image::load_from_memory(&buf);
 
-  let mut in_bin = "".to_string();
+  let str: String = match img_result {
+    Ok(img) => {
+      let hash = pdqhash::generate_pdq_full_size(img).0;
+    
+      let mut in_bin = "".to_string();
+    
+      for p in hash.clone() {
+        in_bin += &format!("{:08b}", p);
+      }
+    
+      in_bin
 
-  for p in hash.clone() {
-    in_bin += &format!("{:08b}", p);
-  }
+    },
+    Err(error) => {
+      eprintln!("Failed to load image: {}", error);
 
-  in_bin
+      "ERR".to_string()
+    }
+  };
+
+  str
 }

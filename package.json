@@ -1,6 +1,6 @@
 {
   "name": "@sensource/pdq",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
@@ -34,5 +34,11 @@
     "test": "ava",
     "universal": "napi universal",
     "version": "napi version"
+  },
+  "optionalDependencies": {
+    "@sensource/pdq-darwin-arm64": "0.2.1",
+    "@sensource/pdq-darwin-x64": "0.2.1",
+    "@sensource/pdq-linux-x64-gnu": "0.2.1",
+    "@sensource/pdq-linux-x64-musl": "0.2.1"
   }
 }

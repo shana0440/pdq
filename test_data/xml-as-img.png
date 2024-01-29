@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response xmlns:ns2="http://www.xovis.com/common-types" xmlns="http://www.xovis.com/action-response">
+    <sensor-time>2024-01-28T21:37:56Z</sensor-time>
+    <request-status>
+        <ns2:status>ERROR</ns2:status>
+        <ns2:error-message>Privacy Mode is activated</ns2:error-message>
+    </request-status>
+</response>
